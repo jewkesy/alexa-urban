@@ -173,31 +173,28 @@ UrbanAlexa.prototype.intentHandlers = {
         });
     },
     "AMAZON.StopIntent": function (intent, session, response) {
-        var speechOutput = getGoodbye();
-        response.tell(speechOutput);
+        response.tell(getGoodbye());
     },
     "AMAZON.CancelIntent": function (intent, session, response) {
-        var speechOutput = getGoodbye();
-        response.tell(speechOutput);
+        response.tell(getGoodbye());
     },
     "AMAZON.NoIntent": function (intent, session, response) {
         var similarTerms = session.attributes.similarTerms;
         if (Array.isArray(similarTerms) && similarTerms.length > 0) {
-            speechOutput = {
+            var speechOutput = {
                 speech: "<speak>Before you go, here is a list of terms that you might be interested in: " + similarTerms.join(',') + "</speak>",
                 type: AlexaSkill.speechOutputType.SSML
             };
             response.tell(speechOutput);
         } else {
-            var speechOutput = getGoodbye();
-            response.tell(speechOutput);
+            response.tell(getGoodbye());
         }
     },
     "AMAZON.YesIntent": function (intent, session, response) {
         var speechOutput, repromptOutput;
 
         if (session.attributes.random) {
-            var speech, speechOutput, repromptOutput;
+            var speech;
             request({
                 url: config.random,
                 method: "GET",
@@ -256,11 +253,14 @@ UrbanAlexa.prototype.intentHandlers = {
 
             if (Array.isArray(sessionDefinitions) && sessionDefinitions.length > 1) {
                 var cleanResponse = sessionDefinitions[sessionPointer].definition.replace(/\n/g, '').replace(/\r/g, '');
+                var cleanExample = sessionDefinitions[sessionPointer].example.replace(/\n/g, '').replace(/\r/g, '');
+
                 speechOutput = {
                     speech: "<speak>" +
-                            "<p>" + cleanResponse + "</p>" +
-                            "<p>" + "Would you like to hear another definition?" + "</p>" +
-                            "</speak>",
+                        "<p>" + cleanResponse + "</p>" +
+                        "<p>" + "Here is an example:" + "<break time='0.5s'/>" + cleanExample + "</p>" +
+                        "<p>" + "Would you like to hear another definition?" + "</p>" +
+                        "</speak>",
                     type: AlexaSkill.speechOutputType.SSML
                 };
                 repromptOutput = {
@@ -299,7 +299,7 @@ exports.handler = function (event, context) {
 };
 
 function getGoodbye() {
-    return goodbyes[randomInt(0, goodbyes.length)]
+    return goodbyes[randomInt(0, goodbyes.length)];
 }
 
 function randomInt(low, high) {

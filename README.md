@@ -10,7 +10,7 @@ Alexa brings you Urban Dictionary!
 ## Full Skill Description
 'Alexa, ask Urban Dictionary what a banana is'
 
-Urban Dictionary is the people-powered slang dictionary.  Learn the lingo! improve your vocab! What could possibly go wrong?!
+Urban Dictionary is the people-powered slang dictionary.  Learn the lingo! Improve your vocab! What could possibly go wrong?!
 
 ** WARNING : Expect adult content, immaturity and hilarity **
 

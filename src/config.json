@@ -1,0 +1,5 @@
+{
+  "endpoint": "http://api.urbandictionary.com/v0/define",
+  "random": "http://api.urbandictionary.com/v0/random",
+  "appId": "amzn1.echo-sdk-ams.app.<todo>"
+}

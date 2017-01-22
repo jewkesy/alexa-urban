@@ -1,0 +1,10 @@
+node_modules
+build
+.idea
+.gradle
+*.eml
+*.iml
+.classpath
+.project
+.settings
+.DS_Store

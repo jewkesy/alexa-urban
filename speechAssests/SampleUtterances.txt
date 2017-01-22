@@ -1,0 +1,23 @@
+DefineTerm to define {Term}
+DefineTerm define {Term}
+DefineTerm what's a {Term}
+DefineTerm what's an {Term}
+DefineTerm what's the meaning of {Term}
+DefineTerm what's the meaning of a {Term}
+DefineTerm what's the meaning of an {Term}
+DefineTerm what does {Term} mean
+DefineTerm what a {Term} is
+DefineTerm what an {Term} is
+DefineTerm tell me about {Term}
+WordOfTheDay what is the word of the day
+WordOfTheDay what's the word of the day
+WordOfTheDay what is today's word
+WordOfTheDay what's today's word
+RandomWord tell me a random word
+RandomWord give me a random word
+RandomWord define a random word
+RandomWord for a random word
+RandomWord tell me a random term
+RandomWord give me a random term
+RandomWord define a random term
+RandomWord for a random term

@@ -14,14 +14,14 @@ Urban Dictionary is the people-powered slang dictionary.  Learn the lingo! Impro
 
 ** WARNING : Expect adult content, immaturity and hilarity **
 
-A fan-based, unofficial Alexa application using Urban Dictionary to bring fun and entertainment to your Echo.
+A fan-based, unofficial Alexa application using the famous UrbanDictionary.com website to bring fun and entertainment to your Echo.
 
-This application is not sponsored or endorsed by Urban Dictionary in any way.
+This application is not sponsored or endorsed by UrbanDictionary.com in any way.
 
 
 ## Example Phrases
 Alexa, ask Urban Dictionary what a banana is
-Alexa, ask Urban Dictionary what's the meaning of banter
+Alexa, ask Urban Dictionary for word of the day
 Alexa, ask Urban Dictionary for a random word
 
 ## Keywords

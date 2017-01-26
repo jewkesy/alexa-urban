@@ -1,7 +1,13 @@
 ![Alt text](./images/108.jpg?raw=false)
 
 # alexa-urban
-An Alexa App that brings Urban Dictionary your Amazon Echo.
+An Alexa App that brings Urban Dictionary your Amazon Echo!
+
+
+## Alexa in Action
+Click to see Alexa define a banana
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=3RlanN_5JeY" target="_blank"><img src="http://img.youtube.com/vi/3RlanN_5JeY/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
 ## Short Skill Description

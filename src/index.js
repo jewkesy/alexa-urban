@@ -15,6 +15,7 @@ var config = require('./config');
 var _ = require('lodash');
 
 var request = require('request');
+var cheerio = require('cheerio');
 var console = require('tracer').colorConsole();
 
 var appId = config.appId;
@@ -96,11 +97,42 @@ UrbanAlexa.prototype.intentHandlers = {
         });
     },
     "WordOfTheDay": function (intent, session, alexaResponse) {
-        var speechOutput = {
-            speech: "<speak>" + "Word of the day is coming soon" + "</speak>",
-            type: AlexaSkill.speechOutputType.SSML
-        };
-        alexaResponse.tell(speechOutput);
+        request({
+            url: config.wordOfTheDay,
+            timeout: 3000,
+            headers: {
+                "Referer": config.wordOfTheDay
+            }
+        }, function (error, response, body) {
+            if (error) {
+                console.log(error);
+                var speechOutput = {
+                    speech: "<speak>" + "I'm sorry, I couldn't find the term: " + termSlot.value + "</speak>",
+                    type: AlexaSkill.speechOutputType.SSML
+                };
+                alexaResponse.tell(speechOutput, "Urban Dictionary", speechOutput);
+            } else {
+                var $, word, def, exam;
+                $ = cheerio.load(body);
+               
+                $('#content div.def-panel').children().each(function(i, elm) {
+                    if (i == 0) return true;
+                    // console.log(i, $(this).text()) // for testing do text() 
+                    
+                    if (i < 4) {
+                        if ($(this).attr('class') == 'def-header')      { word = cleanString($(this).text()); }
+                        else if ($(this).attr('class') == 'meaning')    { def =  cleanString($(this).text()); }
+                        else if ($(this).attr('class') == 'example')    { exam = cleanString($(this).text()); }
+                    }
+                    else { return false; }
+                });
+                var speechOutput = {
+                    speech: "<speak><p>" + word + ":<break time='0.5s'/>" + def + "</p><p>Here is an example:<break time='0.5s'/>" + exam + "</p></speak>",
+                    type: AlexaSkill.speechOutputType.SSML
+                };
+                alexaResponse.tell(speechOutput);
+            }
+        });
     },
     "DefineTerm": function (intent, session, alexaResponse) {
         var termSlot = intent.slots.Term;
@@ -304,4 +336,8 @@ function getGoodbye() {
 
 function randomInt(low, high) {
     return Math.floor(Math.random() * high);
+}
+
+function cleanString(s) {
+    return s.replace(/(\r\n|\n|\r)/gm,"");;
 }

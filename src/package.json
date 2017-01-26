@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^0.22.0",
     "lodash": "^4.17.4",
     "request": "^2.79.0",
     "tracer": "^0.8.7"

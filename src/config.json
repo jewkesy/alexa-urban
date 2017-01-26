@@ -1,5 +1,6 @@
 {
   "endpoint": "http://api.urbandictionary.com/v0/define",
   "random": "http://api.urbandictionary.com/v0/random",
+  "wordOfTheDay": "http://www.urbandictionary.com/",
   "appId": "amzn1.echo-sdk-ams.app.<todo>"
 }

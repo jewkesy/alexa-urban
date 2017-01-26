@@ -20,17 +20,11 @@ This application is not sponsored or endorsed by UrbanDictionary.com in any way.
 
 
 ## Example Phrases
-Alexa, ask Urban Dictionary what a banana is
-Alexa, ask Urban Dictionary for word of the day
-Alexa, ask Urban Dictionary for a random word
+- Alexa, ask Urban Dictionary what a banana is
+- Alexa, ask Urban Dictionary for word of the day
+- Alexa, ask Urban Dictionary for a random word
 
 ## Keywords
-Urban,Dictionary,fun, humour, adult
-
-# Deploy
-`
-$ npm install --production
-`
-
+Urban, Dictionary, fun, humour, adult
 
 Originally cloned from https://github.com/eschizoid/urban-alexa
